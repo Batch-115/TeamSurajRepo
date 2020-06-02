@@ -5,9 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.webcore.app.easyemi.customerRegistration.dto.CustomerDetailsDto;
+import com.webcore.app.easyemi.customerRegistration.dto.CustomerEnquiryDto;
+import com.webcore.app.easyemi.customerRegistration.model.CustomerDetails;
+import com.webcore.app.easyemi.customerRegistration.model.CustomerDocument;
 import com.webcore.app.easyemi.customerRegistration.model.CustomerEmploymentDetails;
 import com.webcore.app.easyemi.customerRegistration.model.CustomerEnquiry;
 import com.webcore.app.easyemi.customerRegistration.model.CustomerLoanDetails;
+import com.webcore.app.easyemi.customerRegistration.repository.CustomerDetailsRepository;
 import com.webcore.app.easyemi.customerRegistration.repository.CustomerEmploymentDetailsRepository;
 import com.webcore.app.easyemi.customerRegistration.repository.CustomerEnquiryRepository;
 import com.webcore.app.easyemi.customerRegistration.repository.LoanDetailsRepository;
@@ -16,6 +21,9 @@ import com.webcore.app.easyemi.customerRegistration.repository.LoanDetailsReposi
 public class CustomerRegisterServiceImpl implements CustomerRegisterService {
 
 	@Autowired
+	CustomerDetailsRepository customerdetailrepo; 
+	
+	@Autowired
 	 LoanDetailsRepository loandetailsrepo;
 	
 	@Autowired
@@ -23,6 +31,22 @@ public class CustomerRegisterServiceImpl implements CustomerRegisterService {
 	
 	@Autowired
 	CustomerEmploymentDetailsRepository customeremployementdetailsrepo;
+	
+	
+	
+	@Override
+	public void saveCustomerDetails(CustomerDetails customerDetails) {
+		// TODO Auto-generated method stub
+		customerdetailrepo.save(customerDetails);	
+	}
+
+	@Override
+	public List<CustomerDetails> getCustomerDetails() {
+		// TODO Auto-generated method stub
+		return customerdetailrepo.findAll();
+	}
+	
+	
 	
 	@Override
 	public void saveLoanDetails(CustomerLoanDetails loanDetails) {
@@ -96,6 +120,26 @@ public class CustomerRegisterServiceImpl implements CustomerRegisterService {
 		// TODO Auto-generated method stub
 		customeremployementdetailsrepo.delete(customeremployementdetails);
 	}
+
+	@Override
+	public List<CustomerEnquiryDto> get() {
+		// TODO Auto-g						enerated method stub
+		return customerenquiryrepo.getAllDetails();
+	}
+
+	@Override
+	public CustomerDetailsDto getSingleDto(String customerMobileNumber) {
+		// TODO Auto-generated method stub
+		return customerdetailrepo.Find(customerMobileNumber);
+	}
+
+	@Override
+	public CustomerDocument getImageById(int id) {
+		// TODO Auto-generated method stub
+		return customerdetailrepo.finddocuments(id);
+	}
+
+	
 
 
 	

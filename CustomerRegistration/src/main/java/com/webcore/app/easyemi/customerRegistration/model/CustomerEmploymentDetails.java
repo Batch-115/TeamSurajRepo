@@ -1,13 +1,19 @@
 package com.webcore.app.easyemi.customerRegistration.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CustomerEmploymentDetails {
+public class CustomerEmploymentDetails implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3414642251134705713L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int employeeDetailsId;	
