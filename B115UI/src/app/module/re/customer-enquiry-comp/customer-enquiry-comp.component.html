@@ -1,0 +1,55 @@
+<div class="card" style="margin-top:100px;" >
+      <div class="card-header" style="text-align: center ;">
+           <h3> ENQUIRY FORM</h3>
+     </div>
+    
+<form [formGroup]="addEnquiryDetails" (ngSubmit)="onSubmit()">
+ 
+  <div class="card-body">
+
+  <div class="form-row">
+   
+    <div class="form-group col-md-6">
+      <label for="firstName">first Name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName">lastName</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName" >
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label for="mobileNo">mobileNo</label>
+      <input type="text" class="form-control" id="mobileNo" formControlName="mobileNo">
+    </div>
+  
+   <div class="form-group col-md-6">
+    <label for="email">email</label>
+    <input type="text" class="form-control" id="email" formControlName="email">
+   </div>
+  
+    <div class="form-group col-md-6">
+    <label for="productName">productName</label>
+    <input type="text" class="form-control" id="productName" formControlName="productName">
+   </div>
+    
+   <div class="form-group col-md-6">
+      <label for="state">state</label>
+      <input type="text" class="form-control" id="state" formControlName="state">
+    </div>
+  
+    <div class="form-group col-md-6">
+      <label for="city">city</label>
+      <input type="text" class="form-control" id="city" formControlName="city">
+   </div>
+   
+ </div>
+ 
+ <button type="submit" class="btn btn-outline-primary" [disabled]="!addEnquiryDetails.valid">Save</button>
+ <button type="submit" class="btn btn-secondary" (click)="goTo()">View Customer Details</button>
+  </div>
+
+</form>
+
+</div>
+    

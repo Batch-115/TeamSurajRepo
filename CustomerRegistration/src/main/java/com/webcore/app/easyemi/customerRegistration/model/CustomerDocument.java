@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 @Entity
 public class CustomerDocument {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int documentId;
@@ -32,7 +32,7 @@ public class CustomerDocument {
 	@Column(length = 16777215)
 	private String bankStatement;
 	
-	private int status;
+	
 
 	public int getDocumentId() {
 		return documentId;
@@ -88,29 +88,6 @@ public class CustomerDocument {
 
 	public void setBankStatement(String bankStatement) {
 		this.bankStatement = bankStatement;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }

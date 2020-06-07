@@ -1,0 +1,157 @@
+<div class="card" style="margin-top:100px;" >
+    <div class="card-header" style="text-align: center ;">
+      <h3> ADdD CUSTOMER ADDRESS DETAILS</h3>
+      </div>
+      <div class="body">
+  <form [formGroup]="customeraddress" (ngSubmit)="onSubmit()" >
+    <div class="row">
+    
+        <div class="col-md-5 form-group">
+            <label >Residence Is</label>
+            <input type="text"    placeholder="ResidenceIs" class="form-control" formControlName="residenceIs">
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Residence Address</label>
+            <input type="text" placeholder="ResidenceAddress" class="form-control" formControlName="residenceAddress"
+            [ngClass]="{'is-invalid':customeraddress.get('residenceAddress').touched && customeraddress.get('residenceAddress').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Area</label>
+            <input type="text"  placeholder="Area" class="form-control" formControlName="area"
+             [ngClass]="{'is-invalid':customeraddress.get('area').touched && customeraddress.get('area').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+
+
+        
+        <div class="col-md-5 form-group">
+            <label >Landmark</label>
+            <input type="text" placeholder="Landmark" class="form-control" formControlName="landmark"
+            [ngClass]="{'is-invalid':customeraddress.get('landmark').touched && customeraddress.get('landmark').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+        
+        
+        <div class="col-md-5 form-group">
+            <label >City</label>
+            <input type="text"  placeholder="City" class="form-control" formControlName="city"
+            [ngClass]="{'is-invalid':customeraddress.get('city').touched && customeraddress.get('city').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+
+        <div class="col-md-5 form-group">
+            <label >State</label>
+            <input type="text"  placeholder="State" class="form-control" formControlName="state"
+            [ngClass]="{'is-invalid':customeraddress.get('state').touched && customeraddress.get('state').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+
+
+        
+        <div class="col-md-5 form-group">
+            <label >Country</label>
+            <input type="text"  placeholder="Country" class="form-control" formControlName="country"
+            [ngClass]="{'is-invalid':customeraddress.get('country').touched && customeraddress.get('country').invalid}" required>
+            <div class="invalid-feedback">
+                <small>required</small>
+              </div>
+        </div>
+
+        <div class="col-md-5 form-group">
+            <label >Pincode</label>
+            <input type="text"  placeholder="Pincode" class="form-control" formControlName="pincode"
+            [ngClass]="{'is-invalid':customeraddress.get('pincode').touched && customeraddress.get('pincode').invalid}" required>
+            <div class="invalid-feedback">
+              <small>only numbers allow (6 digit)</small>
+            </div>
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Residence Since</label>
+            <input type="text" placeholder="ResidenceSince" class="form-control" formControlName="residenceSince">
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local Residence Is</label>
+            <input type="text" placeholder="LocalResidenceIs" class="form-control" formControlName="localResidenceIs">
+        </div>       
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local Residence Address</label>
+            <input type="text" placeholder="LocalResidenceAddress" class="form-control" formControlName="localResidenceAddress">
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local Area</label>
+            <input type="text" placeholder="LocalArea" class="form-control" formControlName="localArea">
+        </div>
+
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local Landmark</label>
+            <input type="text" placeholder="Local Landmark" class="form-control" formControlName="localLandmark">
+        </div>
+
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local City</label>
+            <input type="text" placeholder="Local City" class="form-control" formControlName="localCity">
+        </div>
+
+
+        
+        <div class="col-md-5 form-group">
+            <label > Local Residence Since</label>
+            <input type="text" placeholder="ResidenceSince" class="form-control" formControlName="localResidenceSince">
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Local State</label>
+            <input type="text" placeholder="Local State" class="form-control" formControlName="localState">
+        </div>
+
+        <div class="col-md-5 form-group">
+            <label >Local Pincode</label>
+            <input type="text"  placeholder="ResidenceSince" class="form-control" formControlName="localPincode"
+            [ngClass]="{'is-invalid':customeraddress.get('localPincode').touched && customeraddress.get('localPincode').invalid}" required>
+            <div class="invalid-feedback">
+              <small>only numbers allow (6 digit)</small>
+            </div>
+        </div>
+
+        
+        <div class="col-md-5 form-group">
+            <label >Status</label>
+            <input type="number" placeholder="Status" class="form-control" formControlName="status">
+        </div>
+
+    
+    </div>
+    <button type="submit" class="btn btn-outline-primary"  [disabled]="!customeraddress.valid">Save</button>
+        <!-- <button type="submit" class="btn btn-outline-primary" (click)="goToNextPage()">Next</button> -->
+  
+</form>
+</div>
+</div>

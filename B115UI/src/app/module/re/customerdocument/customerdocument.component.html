@@ -1,0 +1,58 @@
+
+<div class="card" style="margin-top:100px;" >
+  <div class="card-header" style="text-align: center ;">        
+     <h3>CUSTOMER DOCUMENT</h3>
+  </div>
+  <div class="body">
+<div class="container-lg" style="margin-left: 100px;" >
+  
+    <div class="container row">
+      <div class="col-row-12">
+         <label>Address Proof:</label>
+         <input type="file"  #address name="addressProof" (change)="onFileChanged($event,address.name)" class="form-control-file" >
+       
+       <hr class="mt-2 mb-3"/>
+       <label>Id Proof:</label>
+       
+       <input type="file"  #idProof name="idProof" (change)="onFileChanged($event,idProof.name)" class="form-control-file" >
+    
+        <hr class="mt-2 mb-3"/>
+        <label> Photo:</label>
+     
+      <input type="file"  #photo name="photo" (change)="onFileChanged($event,photo.name)" class="form-control-file" >
+       <hr class="mt-2 mb-3"/>
+       <label> Blank Cheque: </label>
+        
+      <input type="file"  #blankcheque name="blankcheque" (change)="onFileChanged($event,blankcheque.name)" class="form-control-file" >
+       
+       <hr class="mt-2 mb-3"/>
+      <label>Bank Statement:</label>
+       
+       <input type="file"  #bankStatement name="bankStatement" (change)="onFileChanged($event,bankStatement.name)" class="form-control-file" >
+        
+        
+        <hr class="mt-2 mb-3"/>
+        <label>Signature:</label>
+        
+        <input type="file"  #signature name="signature" (change)="onFileChanged($event,signature.name)" class="form-control-file" >
+         
+         <hr class="mt-2 mb-3"/>
+         
+    </div>
+    
+    </div>
+    <!-- <div class="progress" *ngIf="progress">
+      <div class="progress-bar" [style.width]="progress + '%'" [(ngModel)]="progress" >{{progress}}%</div>
+    </div> -->
+    
+    <button type="button" (click)="onUpload()" value="upload" class="btn btn-primary" >upload files</button>
+
+   
+<button (click)="reset()" class="btn btn-secondary">Reset</button>
+
+</div>
+
+   
+   </div>
+
+  </div>

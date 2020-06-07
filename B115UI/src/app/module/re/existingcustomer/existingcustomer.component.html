@@ -1,0 +1,45 @@
+<div class="row" style="margin-top: 100PX;">
+   
+    <div class="col-md-5 form-group">
+    <label >Customer Mobile Number</label>
+    <input type="text" placeholder="customerMobileNumber" class="form-control" [(ngModel)]="customerMobileNumber">
+    </div>
+        <div class="col-md-6">
+        <button class="btn btn-primary btn-lg" type="submit" (click)="get()">View</button>
+        </div>
+    <ng-container *ngIf="u">
+       <table class="table" style="margin-left: 50px;">
+           <tr>
+               <th>id</th>
+             <th>First Name</th>
+             <th>Middel Name</th>
+             <th>Last Name</th>  
+             <th>Gender</th>
+             <th>Customer NetMonthly Income</th>
+             <th>Address</th>
+             <th>Customer MobileNumber</th>
+             
+          </tr>
+        <tbody class="text-body">
+            <tr>
+                <td>{{u.customerId}}</td>
+                <td>{{u.customerFirstName}}</td>
+                <td>{{u.customerMiddleName}}</td>
+                <td>{{u.customerLastName}}</td>
+                <td>{{u.customerGender}}</td>
+                <td>{{u.customerNetMonthlyIncome}}</td>
+                <td>{{u.residenceAddress}}</td>
+                <td>{{u.customerMobileNumber}}</td>
+                <td><button class="btn btn-primary" (click)="loan(u.customerId)">Add Loan </button></td>
+            </tr>
+        </tbody>
+        </table>
+    </ng-container>
+     
+     
+ </div>  
+
+
+
+
+

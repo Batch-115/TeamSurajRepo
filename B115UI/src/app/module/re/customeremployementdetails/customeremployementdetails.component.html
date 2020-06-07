@@ -1,0 +1,70 @@
+<div class="card" style="margin-top:100px;" >
+  <div class="card-header" style="text-align: center ;">
+    <h3> ADD CUSTOMER EMPLOYEMENT DETAILS</h3>
+    </div>
+    <div class="body">
+<form [formGroup]="customerEmployementDetails" (ngSubmit)="onSubmit()" >
+ 
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="employeeType">employeeType</label>
+      <input type="text" class="form-control" id="employeeType" formControlName="employeeType"
+      [ngClass]="{'is-invalid':customerEmployementDetails.get('employeeType').touched && customerEmployementDetails.get('employeeType').invalid}" required>
+      <div class="invalid-feedback">
+          <small>required</small>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="industryType">industryType</label>
+      <input type="text" class="form-control" id="industryType" formControlName="industryType"
+      [ngClass]="{'is-invalid':customerEmployementDetails.get('industryType').touched && customerEmployementDetails.get('industryType').invalid}" required>
+      <div class="invalid-feedback">
+          <small>required</small>
+        </div>
+    </div>
+  
+  <div class="form-group col-md-6">
+    <label for="nameOfCompany">nameOfCompany</label>
+    <input type="text" class="form-control" id="nameOfCompany" formControlName="nameOfCompany"
+    [ngClass]="{'is-invalid':customerEmployementDetails.get('nameOfCompany').touched && customerEmployementDetails.get('nameOfCompany').invalid}" required>
+    <div class="invalid-feedback">
+        <small>required</small>
+      </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="desgignation">desgignation</label>
+    <input type="text" class="form-control" id="desgignation" formControlName="desgignation"
+    [ngClass]="{'is-invalid':customerEmployementDetails.get('desgignation').touched && customerEmployementDetails.get('desgignation').invalid}" required>
+    <div class="invalid-feedback">
+        <small>required</small>
+      </div>
+  </div>
+    
+   <div class="form-group col-md-6">
+      <label for="addressOfCompany">addressOfCompany</label>
+      <input type="text" class="form-control" id="addressOfCompany" formControlName="addressOfCompany"
+      [ngClass]="{'is-invalid':customerEmployementDetails.get('addressOfCompany').touched && customerEmployementDetails.get('addressOfCompany').invalid}" required>
+      <div class="invalid-feedback">
+          <small>required</small>
+        </div>
+    </div>
+  
+    <div class="form-group col-md-6">
+      <label for="status">status</label>
+      <input type="text" class="form-control" id="status" formControlName="status">
+  </div>
+   
+</div>
+
+<!-- <div class="row"  *ngIf="showMsg">
+  <div class="col-xs-12">
+    <p class="alert alert-success">
+        <strong>Successfully Save </strong>
+    </p>
+  </div>
+</div> -->
+  <button type="submit" class="btn btn-outline-primary"  [disabled]="!customerEmployementDetails.valid">Save</button>
+  <!-- <button type="submit" class="btn btn-outline-primary" (click)="goToNextPage()">Next</button> -->
+</form>
+</div>
+</div>

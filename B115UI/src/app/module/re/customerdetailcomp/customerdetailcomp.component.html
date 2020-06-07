@@ -1,0 +1,125 @@
+<div class="card" style="margin-top:100px;" >
+    <div class="card-header" style="text-align: center ;">
+      <h3> ADD CUSTOMER DETAILS</h3>
+      </div>
+      <div class="body">
+  <form [formGroup]="customerDetails" (ngSubmit)="onSubmit()" >
+   
+    <div class="form-row">
+      <div class="col-md-5 form-group">
+        <label >First name</label>
+        <input type="text" placeholder="Customer First Name" class="form-control" formControlName="customerFirstName"
+        [ngClass]="{'is-invalid':customerDetails.get('customerFirstName').touched && customerDetails.get('customerFirstName').invalid}" required>
+        <div class="invalid-feedback">
+          <small>First Name is required and it contain at more than 3 character & numbers not allow</small>
+        </div>
+    </div>
+
+
+
+        <div class="col-md-5 form-group">
+        <label >Middle name</label>
+        <input type="text" placeholder="Customer Middle Name" class="form-control" formControlName="customerMiddleName"
+        [ngClass]="{'is-invalid':customerDetails.get('customerMiddleName').touched && customerDetails.get('customerMiddleName').invalid}" required>
+        <div class="invalid-feedback">
+          <small>Middle Name is required and it contain at more than 3 character & numbers not allow</small>
+        </div>
+      </div>
+
+    <div class="col-md-5 form-group">
+        <label >Last name</label>
+        <input type="text"   placeholder="Customer Last Name" class="form-control" formControlName="customerLastName"
+        [ngClass]="{'is-invalid':customerDetails.get('customerLastName').touched && customerDetails.get('customerLastName').invalid}" required>
+        <div class="invalid-feedback">
+          <small>Last Name is required and it contain at more than 3 character & numbers not allow</small>
+        </div>
+      </div>
+    <div class="col-md-5 form-group">
+        <label >Date Of Birth</label>
+        <input type="text"   placeholder="Customer DateOfBirth" class="form-control" formControlName="customerDataOfBirth"
+        [ngClass] = "{'is-invalid':customerDetails.get('customerDataOfBirth').touched && customerDetails.get('customerDataOfBirth').invalid}">
+        <div class="invalid-feedback">
+          <small>Date Of Birth must be in Format dd/mm/yyyy </small>
+         </div>
+   
+      </div>
+    <div class="col-md-5 form-group">
+        <label >Gender :</label>  &nbsp;
+        <label class="radio-inline"><input type="radio" value="male" formControlName="customerGender">Male</label>
+        &nbsp;
+       <label class="radio-inline"> <input type="radio"  value ="female" formControlName="customerGender">Female</label>            
+    </div>
+    
+    
+    <div class="col-md-5 form-group">
+        <label >Maritail Status  :</label>&nbsp;
+          <label class="radio-inline"><input type="radio" value="Married" formControlName="customerMaritailStatus">Married</label>
+          &nbsp;
+         <label class="radio-inline"> <input type="radio"  value ="UnMarried" formControlName="customerMaritailStatus">UnMarried</label>                   
+    </div>
+    
+    <div class="col-md-5 form-group">
+        <label >Mobile Number</label>
+        <input type="text" placeholder="CustomerMobileNumber" class="form-control" formControlName="customerMobileNumber"
+        [ngClass]="{'is-invalid':customerDetails.get('customerMobileNumber').touched && customerDetails.get('customerMobileNumber').invalid}" required>
+        <div class="invalid-feedback">
+        <small>mobile number is required it only contain numbers </small>        
+      </div>
+    </div>
+    
+    
+    
+    <div class="col-md-5 form-group" >
+        <label >Education</label>
+        <div ngbDropdown class="dropdown " >
+          
+          
+              <select name="CustomerEducation" formControlName="customerEducation">
+              <option class="dropdown-item " value="Under Graduate">Under Graduate</option>
+              <option class="dropdown-item" value=" Graduate" >Graduate</option>
+              <option class="dropdown-item" value="  Post Graduate" >Post Graduate</option>
+              <option class="dropdown-item"  value ="Professional Qualified">Professional Qualified</option>
+               </select>
+            
+          </div>
+       
+    </div>
+    <div class="col-md-5 form-group" >
+      <label >Net Monthly Income</label>
+      <div ngbDropdown class="dropdown ">
+            <select name="CustomerNetMonthlyIncome" formControlName="customerNetMonthlyIncome" >
+            <option class="dropdown-item " value=" Above Rs 15,000"> Above Rs 15,000</option>
+            <option class="dropdown-item" value=" Rs 15,000  - Rs 25,000" >Rs 15000  - Rs 25000</option>
+            <option class="dropdown-item" value="Rs 25,000 - Rs 50,000  " >RS 25,000 - Rs 50,000 </option>
+            <option class="dropdown-item"  value ="Rs 50,000 - Rs 75,000">Rs 50,000 - Rs 75,000</option>
+             </select>
+          
+        </div>
+     
+  </div>
+    
+    <div class="col-md-5 form-group">
+        <label >Email id </label>
+        <input type="text" placeholder="enter email id " class="form-control" formControlName="customergmail" 
+        [ngClass]="{'is-invalid':customerDetails.get('customergmail').touched && customerDetails.get('customergmail').invalid}" required>
+       
+        <div *ngIf="customerDetails.get('customergmail').touched && customerDetails.get('customergmail').invalid"  class="invalid-feedback">
+          <small *ngIf="customerDetails.get('customergmail').errors.required">Email Name is required</small>
+          <small *ngIf="customerDetails.get('customergmail').errors.email">Email must be a valid email Address</small>
+        </div>
+    </div>
+    
+    <div class="col-md-5 form-group">
+        <label >Status</label>
+        <input type="number" placeholder="status" class="form-control" formControlName="status">
+    </div>
+ 
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary"  [disabled]="!customerDetails.valid">Next</button>
+    <!-- <button type="submit" class="btn btn-outline-primary" (click)="goToNextPage()">Next</button> -->
+  
+  </form>
+  </div>
+  </div>
+ 
